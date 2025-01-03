@@ -14,7 +14,7 @@ const App = () => {
   const { images, isLoading, fetchData } = context;
 
   useEffect(() => {
-    fetchData();
+    fetchData(2, 20);
   }, [fetchData]);
 
   if (isLoading) {

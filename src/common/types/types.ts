@@ -10,7 +10,7 @@ export interface Image {
 export interface StoreContextType {
   images: Image[];
   isLoading: boolean;
-  fetchData: () => Promise<void>;
+  fetchData: (page: number, perPage: number) => Promise<void>;
   term: string;
   searchText: (text: string) => void;
 }

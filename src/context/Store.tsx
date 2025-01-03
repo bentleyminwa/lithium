@@ -8,19 +8,22 @@ function Provider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [term, setTerm] = useState("");
 
-  const fetchData = useCallback(async () => {
-    try {
-      setIsLoading(true);
-      const response = await fetch(
-        `https://pixabay.com/api/?key=46848446-4201e1b80936076e4d594ef26&q=${term}`
-      );
-      const data = await response.json();
-      setImages(data.hits);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  }, [term]);
+  const fetchData = useCallback(
+    async (page: number, perPage: number) => {
+      try {
+        setIsLoading(true);
+        const response = await fetch(
+          `https://pixabay.com/api/?key=46848446-4201e1b80936076e4d594ef26&q=${term}&page=${page}&per_page=${perPage}`
+        );
+        const data = await response.json();
+        setImages(data.hits);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    [term]
+  );
 
   const searchText = useCallback((text: string) => {
     setTerm(text);
