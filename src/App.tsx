@@ -26,7 +26,7 @@ const App = () => {
   }
 
   return (
-    <div className="bg-[#EAEAEA] min-h-screen font-nunito text-[#121212]">
+    <div className="bg-[#121212] min-h-screen font-nunito text-[#eaeaea]">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home images={images} />} />

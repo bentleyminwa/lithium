@@ -9,7 +9,7 @@ const imageVariants = {
 const MainSection = ({ images }: { images: Image[] }) => {
   return (
     <motion.div className="mt-20 px-10 md:px-20">
-      <h1 className="text-2xl text-[#EAEAEA] font-semibold mb-10">
+      <h1 className="text-2xl text-[#ff5b0a] font-semibold mb-10">
         Free Stock Photos
       </h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full ">
