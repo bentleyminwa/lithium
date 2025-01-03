@@ -10,7 +10,7 @@ const Logo = () => {
   return (
     <div>
       <Link to="/">
-        <img src="./images/logo.png" alt="" className="max-w-16" />
+        <img src="./images/lithium.png" alt="" className="w-14" />
       </Link>
     </div>
   );

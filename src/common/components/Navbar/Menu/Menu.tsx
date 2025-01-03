@@ -8,7 +8,7 @@ import Hamburger from "hamburger-react";
 
 const Menu = () => {
   return (
-    <div>
+    <div className="text-white">
       <Hamburger />
     </div>
   );

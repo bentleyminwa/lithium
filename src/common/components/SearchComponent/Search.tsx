@@ -18,7 +18,7 @@ const Search = () => {
         className="border border-gray-300 rounded-l-full h-10 w-full px-5 outline-none text-gray-600"
       />
       <button className="border border-gray-300 rounded-r-full h-10 w-14 flex justify-center items-center group">
-        <GoSearch className="text-xl font-bold group-hover:transform group-hover:scale-125 transition duration-150 ease-in-out" />
+        <GoSearch className="text-xl text-[#ff5b0a] font-bold group-hover:transform group-hover:scale-125 transition duration-150 ease-in-out" />
       </button>
     </motion.div>
   );
