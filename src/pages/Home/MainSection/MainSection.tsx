@@ -1,5 +1,11 @@
+import { motion } from "framer-motion";
 import { useContext, useEffect } from "react";
 import StoreContext from "../../../context/Store";
+
+const imageVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const MainSection = () => {
   const context = useContext(StoreContext);
@@ -23,13 +29,32 @@ const MainSection = () => {
   }
 
   return (
-    <div>
-      {images.map((image) => (
-        <div key={image.id}>
-          <img src={image.webformatURL} alt={image.tags} />
-        </div>
-      ))}
-    </div>
+    <motion.div className="mt-20 px-7">
+      <h1 className="text-2xl text-gray-800 font-semibold mb-10">
+        Free Stock Photos
+      </h1>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        {images.map((image, index) => (
+          <div
+            key={image.id}
+            className={`relative overflow-hidden ${
+              index % 5 === 0
+                ? "col-span-1 row-span-2"
+                : "col-span-1 row-span-1"
+            }`}
+          >
+            <motion.img
+              variants={imageVariants}
+              initial="hidden"
+              whileInView="visible"
+              src={image.webformatURL}
+              alt={image.tags}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
+        ))}
+      </div>
+    </motion.div>
   );
 };
 
