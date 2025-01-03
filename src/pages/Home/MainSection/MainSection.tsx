@@ -18,7 +18,7 @@ const MainSection = ({ images }: { images: Image[] }) => {
             key={image.id}
             className={`relative overflow-hidden ${
               index % 5 === 0
-                ? "col-span-1 row-span-2"
+                ? "col-span-2 row-span-2"
                 : "col-span-1 row-span-1"
             }`}
           >

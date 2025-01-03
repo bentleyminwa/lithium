@@ -1,6 +1,8 @@
 export interface Image {
   id: number;
   webformatURL: string;
+  webformatWidth: number;
+  webformatHeight: number;
   largeImageURL: string;
   tags: string;
 }
