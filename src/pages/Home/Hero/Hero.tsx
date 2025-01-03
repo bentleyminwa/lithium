@@ -1,5 +1,5 @@
 // import { motion } from "framer-motion";
-import Search from "../../../components/SearchComponent/Search";
+import Search from "../../../common/components/SearchComponent/Search";
 
 // const heroVariants = {
 //   hidden: { opacity: 0, x: 100 },
