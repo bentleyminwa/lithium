@@ -11,11 +11,15 @@ const App = () => {
     throw new Error("MainSection must be used within a StoreProvider");
   }
 
-  const { images, isLoading, fetchData } = context;
+  const { images, videos, isLoading, fetchImages, fetchVideos } = context;
 
   useEffect(() => {
-    fetchData(2, 200);
-  }, [fetchData]);
+    fetchImages(2, 200);
+  }, [fetchImages]);
+
+  useEffect(() => {
+    fetchVideos(1, 20);
+  }, [fetchVideos]);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -25,11 +29,15 @@ const App = () => {
     return <h1>No images found</h1>;
   }
 
+  if (videos.length === 0) {
+    return <h1>No videos found</h1>;
+  }
+
   return (
     <div className="bg-[#121212] min-h-screen font-nunito text-[#eaeaea]">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home images={images} />} />
+        <Route path="/" element={<Home images={images} videos={videos} />} />
       </Routes>
     </div>
   );

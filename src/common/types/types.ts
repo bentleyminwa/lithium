@@ -7,10 +7,22 @@ export interface Image {
   tags: string;
 }
 
+export interface Video {
+  id: number;
+  tags: string;
+  videos: {
+    tiny: {
+      url: string;
+    };
+  };
+}
+
 export interface StoreContextType {
   images: Image[];
+  videos: Video[];
   isLoading: boolean;
-  fetchData: (page: number, perPage: number) => Promise<void>;
+  fetchImages: (page: number, perPage: number) => Promise<void>;
+  fetchVideos: (page: number, perPage: number) => Promise<void>;
   term: string;
   searchText: (text: string) => void;
 }
