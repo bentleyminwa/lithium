@@ -1,33 +1,12 @@
 import { motion } from "framer-motion";
-import { useContext, useEffect } from "react";
-import StoreContext from "../../../context/Store";
+import { Image } from "../../../common/types/types";
 
 const imageVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const MainSection = () => {
-  const context = useContext(StoreContext);
-
-  if (!context) {
-    throw new Error("MainSection must be used within a StoreProvider");
-  }
-
-  const { images, isLoading, fetchData } = context;
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (images.length === 0) {
-    return <h1>No images found</h1>;
-  }
-
+const MainSection = ({ images }: { images: Image[] }) => {
   return (
     <motion.div className="mt-20 px-7">
       <h1 className="text-2xl text-gray-800 font-semibold mb-10">

@@ -1,11 +1,12 @@
+import { Image } from "../../common/types/types";
 import Hero from "./Hero/Hero";
 import MainSection from "./MainSection/MainSection";
 
-const Home = () => {
+const Home = ({ images }: { images: Image[] }) => {
   return (
     <div>
       <Hero />
-      <MainSection />
+      <MainSection images={images} />
     </div>
   );
 };
