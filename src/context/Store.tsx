@@ -1,13 +1,5 @@
 import { createContext, useCallback, useState } from "react";
-import { Image } from "../common/types/types";
-
-interface StoreContextType {
-  images: Image[];
-  isLoading: boolean;
-  fetchData: () => Promise<void>;
-  term: string;
-  searchText: (text: string) => void;
-}
+import { Image, StoreContextType } from "../common/types/types";
 
 const StoreContext = createContext<StoreContextType | void>(undefined);
 
