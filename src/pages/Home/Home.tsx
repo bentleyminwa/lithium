@@ -1,12 +1,17 @@
-import { Image } from "../../common/types/types";
+import { Image, Video } from "../../common/types/types";
 import Hero from "./Hero/Hero";
 import MainSection from "./MainSection/MainSection";
 
-const Home = ({ images }: { images: Image[] }) => {
+type HomeProps = {
+  images: Image[];
+  videos: Video[];
+};
+
+const Home = ({ images, videos }: HomeProps) => {
   return (
     <div>
       <Hero />
-      <MainSection images={images} />
+      <MainSection images={images} videos={videos} />
     </div>
   );
 };
