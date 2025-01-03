@@ -14,7 +14,7 @@ const App = () => {
   const { images, isLoading, fetchData } = context;
 
   useEffect(() => {
-    fetchData(2, 20);
+    fetchData(2, 200);
   }, [fetchData]);
 
   if (isLoading) {
@@ -26,7 +26,7 @@ const App = () => {
   }
 
   return (
-    <div className="bg-gray-100 min-h-screen font-nunito">
+    <div className="bg-[#121212] min-h-screen font-nunito text-[#EAEAEA]">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home images={images} />} />

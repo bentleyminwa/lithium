@@ -16,7 +16,7 @@ import Search from "../../../common/components/SearchComponent/Search";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center pt-20 bg-hero-pattern h-[50vh] bg-cover bg-center bg-no-repeat text-gray-100">
+    <div className="flex flex-col items-center pt-52 bg-hero-pattern h-[70vh] bg-cover bg-center bg-no-repeat text-gray-100">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-center mb-3">
           The Lithium Gallery
