@@ -4,12 +4,12 @@ import { GoSearch } from "react-icons/go";
 const Search = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{
-        opacity: 1,
-        x: 0,
-        transition: { delay: 2, duration: 1, type: "spring", stiffness: 80 },
-      }}
+      // initial={{ opacity: 0, x: -100 }}
+      // animate={{
+      //   opacity: 1,
+      //   x: 0,
+      //   transition: { delay: 2, duration: 1, type: "spring", stiffness: 80 },
+      // }}
       className="flex justify-center items-center"
     >
       <input
