@@ -14,22 +14,15 @@ const ImageList = () => {
     throw new Error("ImageList must be used within a StoreProvider");
   }
 
-  const { images, isLoading, fetchImages } = context;
+  const { images, fetchImages } = context;
 
   useEffect(() => {
     fetchImages(2, 200);
   }, [fetchImages]);
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (images.length === 0) {
-    return <h1>No images found</h1>;
-  }
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full ">
-      {images.map((image, index) => (
+      {images?.map((image, index) => (
         <div
           key={image.id}
           className={`relative overflow-hidden ${
