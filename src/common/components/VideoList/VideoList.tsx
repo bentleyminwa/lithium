@@ -17,7 +17,7 @@ const VideoList = () => {
   const { videos, fetchVideos } = context;
 
   useEffect(() => {
-    fetchVideos(1, 20);
+    fetchVideos(1, 100);
   }, [fetchVideos]);
 
   return (
