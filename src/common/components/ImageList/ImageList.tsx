@@ -17,7 +17,7 @@ const ImageList = () => {
   const { images, fetchImages } = context;
 
   useEffect(() => {
-    fetchImages(2, 200);
+    fetchImages(1, 100);
   }, [fetchImages]);
 
   return (
