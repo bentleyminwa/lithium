@@ -1,15 +1,8 @@
 import { useState } from "react";
-import { IoCheckmarkSharp } from "react-icons/io5";
 import ImageList from "../../../common/components/ImageList/ImageList";
 import VideoList from "../../../common/components/VideoList/VideoList";
-import { Image, Video } from "../../../common/types/types";
 
-type MainSectionProps = {
-  images: Image[];
-  videos: Video[];
-};
-
-const MainSection = ({ images, videos }: MainSectionProps) => {
+const MainSection = () => {
   const [filter, setFilter] = useState("photos");
 
   const handleFilterChange = (filter: string) => {
@@ -30,22 +23,14 @@ const MainSection = ({ images, videos }: MainSectionProps) => {
             className="text-[#ff5b0a] text-lg font-bold px-2 py-1 border border-gray-600 bg-gray-600 rounded-full cursor-pointer outline-none hover:border-[#ff5b0a]"
           >
             <option value="photos" className="text-green-500 bg-none">
-              {filter === "photos" && (
-                <IoCheckmarkSharp className="inline-block" />
-              )}{" "}
               Photos
             </option>
-            <option value="videos">
-              {filter === "videos" && (
-                <IoCheckmarkSharp className="inline-block" />
-              )}{" "}
-              Videos
-            </option>
+            <option value="videos">Videos</option>
           </select>
         </div>
       </div>
-      {filter === "photos" && <ImageList images={images} />}
-      {filter === "videos" && <VideoList videos={videos} />}
+      {filter === "photos" && <ImageList />}
+      {filter === "videos" && <VideoList />}
     </div>
   );
 };

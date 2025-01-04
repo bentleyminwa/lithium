@@ -1,10 +1,27 @@
-import { Video } from "../../types/types";
+import { useContext, useEffect } from "react";
+import StoreContext from "../../../context/Store";
 
-type VideoProps = {
-  videos: Video[];
-};
+const VideoList = () => {
+  const context = useContext(StoreContext);
 
-const VideoList = ({ videos }: VideoProps) => {
+  if (!context) {
+    throw new Error("ImageList must be used within a StoreProvider");
+  }
+
+  const { videos, isLoading, fetchVideos } = context;
+
+  useEffect(() => {
+    fetchVideos(1, 20);
+  }, [fetchVideos]);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (videos.length === 0) {
+    return <h1>No images found</h1>;
+  }
+
   return (
     <div>
       {videos.map((video) => (
