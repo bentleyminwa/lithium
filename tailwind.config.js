@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         "hero-pattern": "url('/src/assets/images/hero.jpg')",
+        "search-pattern": "url('/src/assets/images/search.jpg')",
       },
       fontFamily: {
         nunito: ["Nunito", "serif"],
