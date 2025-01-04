@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useContext, useEffect } from "react";
 import StoreContext from "../../../context/Store";
+import Loader from "../Loader/Loader";
 
 const imageVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -14,11 +15,30 @@ const VideoList = () => {
     throw new Error("ImageList must be used within a StoreProvider");
   }
 
-  const { videos, fetchVideos } = context;
+  const { isLoading, videos, fetchVideos } = context;
 
   useEffect(() => {
-    fetchVideos(1, 100);
+    fetchVideos(1, 50);
   }, [fetchVideos]);
+
+  if (isLoading) {
+    return (
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full ">
+        {Array.from({ length: 10 }).map((_, index) => (
+          <div
+            key={index}
+            className={`relative overflow-hidden ${
+              index % 5 === 0
+                ? "col-span-2 row-span-2"
+                : "col-span-1 row-span-1"
+            }`}
+          >
+            <Loader />
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full ">
