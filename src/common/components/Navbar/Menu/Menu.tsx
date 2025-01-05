@@ -11,6 +11,9 @@ const Menu = () => {
   // close the hamburger menu when the route changes
   useEffect(() => {
     setOpen(false);
+    onscroll = () => {
+      setOpen(false);
+    };
   }, [location]);
 
   function toggleMenu() {
