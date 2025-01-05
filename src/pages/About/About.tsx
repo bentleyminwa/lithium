@@ -61,7 +61,7 @@ const About = () => {
       exit="exit"
       className="pt-32"
     >
-      <div className="bg-about-pattern bg-cover bg-center bg-no-repeat h-[50vh] text-center pt-28">
+      <div className="bg-about-pattern bg-cover bg-center bg-no-repeat h-[50vh] text-center pt-16">
         <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
           Discover. Inspire. Create.
         </h1>
