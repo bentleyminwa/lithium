@@ -1,10 +1,17 @@
 import { AnimatePresence } from "framer-motion";
 import Hamburger from "hamburger-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { MenuPanel } from "./MenuPanel";
 
 const Menu = () => {
   const [isOpen, setOpen] = useState(false);
+  const location = useLocation();
+
+  // close the hamburger menu when the route changes
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   function toggleMenu() {
     setOpen(!isOpen);
