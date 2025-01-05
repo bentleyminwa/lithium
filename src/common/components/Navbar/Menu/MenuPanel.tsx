@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { BsJournalBookmark } from "react-icons/bs";
 import { FaWpexplorer } from "react-icons/fa6";
 import { HiOutlineHome, HiOutlineInformationCircle } from "react-icons/hi";
-import { SlLogin } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
 interface MenuPanelProps {
@@ -48,11 +47,6 @@ const links = [
     path: "/journal",
     label: "Journal",
     icon: <BsJournalBookmark className=" text-2xl text-gray-400" />,
-  },
-  {
-    path: "/login",
-    label: "Login",
-    icon: <SlLogin className=" text-2xl text-gray-400" />,
   },
 ];
 

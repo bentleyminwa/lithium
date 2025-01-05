@@ -2,6 +2,18 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
 const linkVariants = {
+  hidden: {
+    opacity: 0,
+    y: -50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
   hover: {
     scale: 1.1,
     color: "#ff5b0a",
@@ -13,15 +25,20 @@ const linkVariants = {
 };
 
 const links = [
+  { path: "/", label: "Home" },
   { path: "/about", label: "About" },
   { path: "/search", label: "Explore" },
   { path: "/journal", label: "Journal" },
-  { path: "/login", label: "Login" },
 ];
 
 const NavLinks = () => {
   return (
-    <nav className="w-full font-semibold text-base">
+    <motion.nav
+      variants={linkVariants}
+      initial="hidden"
+      animate="visible"
+      className="w-full font-semibold text-base"
+    >
       <ul className="flex justify-between items-center gap-10">
         {links.map((link) => (
           <motion.li
@@ -43,7 +60,7 @@ const NavLinks = () => {
           </motion.li>
         ))}
       </ul>
-    </nav>
+    </motion.nav>
   );
 };
 
