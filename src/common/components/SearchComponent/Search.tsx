@@ -35,9 +35,13 @@ const Search = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate(`/search?term=${text}`);
-    searchText(text);
-    setText(text);
+
+    if (text.trim() !== "") {
+      searchText(text);
+      setText(text);
+      navigate(`/search?term=${text}`);
+    }
+    return;
   };
 
   return (
