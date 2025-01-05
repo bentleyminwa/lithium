@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+// import { useLocation } from "react-router-dom";
 import Search from "../../../common/components/SearchComponent/Search";
 
 const containerVariants = {
@@ -24,6 +25,8 @@ const textVariants = {
 };
 
 const Hero = () => {
+  // const location = useLocation();
+
   return (
     <motion.div
       variants={containerVariants}

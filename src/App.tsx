@@ -11,7 +11,7 @@ const App = () => {
   const location = useLocation();
 
   return (
-    <div className="bg-[#121212] min-h-screen font-nunito text-[#eaeaea]">
+    <div className="bg-[#121212] min-h-screen font-nunito text-[#eaeaea] overflow-x-hidden">
       <Navbar />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.key}>

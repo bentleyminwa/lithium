@@ -1,7 +1,24 @@
+import { motion } from "framer-motion";
 import { useContext, useState } from "react";
 import { GoSearch } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 import StoreContext from "../../../context/Store";
+
+const searchVariants = {
+  hidden: {
+    x: -20,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 1.5,
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Search = () => {
   const [text, setText] = useState("");
@@ -24,7 +41,13 @@ const Search = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex justify-center items-center">
+    <motion.form
+      variants={searchVariants}
+      initial="hidden"
+      animate="visible"
+      onSubmit={handleSubmit}
+      className="flex justify-center items-center"
+    >
       <input
         value={text}
         onChange={(e) => setText(e.target.value)}
@@ -38,7 +61,7 @@ const Search = () => {
       >
         <GoSearch className="text-xl text-[#ff5b0a] font-bold group-hover:transform group-hover:scale-125 transition duration-150 ease-in-out" />
       </button>
-    </form>
+    </motion.form>
   );
 };
 

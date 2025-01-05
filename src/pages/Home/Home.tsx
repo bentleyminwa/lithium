@@ -3,8 +3,22 @@ import Hero from "./Hero/Hero";
 import MainSection from "./MainSection/MainSection";
 
 const PageVariants = {
-  exit: {
+  hidden: {
     x: "-100vw",
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+  visible: {
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+  exit: {
+    x: "100vw",
     transition: {
       duration: 0.5,
       ease: "easeInOut",
@@ -14,7 +28,12 @@ const PageVariants = {
 
 const Home = () => {
   return (
-    <motion.div variants={PageVariants} exit="exit">
+    <motion.div
+      variants={PageVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <Hero />
       <MainSection />
     </motion.div>

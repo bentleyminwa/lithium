@@ -4,7 +4,11 @@ import MainSection from "../Home/MainSection/MainSection";
 
 const PageVariants = {
   hidden: {
-    x: "100vw",
+    x: "-100vw",
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
   },
   visible: {
     x: 0,
