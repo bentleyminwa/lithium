@@ -5,6 +5,10 @@ import { HiOutlineHome, HiOutlineInformationCircle } from "react-icons/hi";
 import { SlLogin } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
+interface MenuPanelProps {
+  onToggle: () => void;
+}
+
 const panelVariants = {
   open: {
     opacity: 1,
@@ -52,7 +56,7 @@ const links = [
   },
 ];
 
-export const MenuPanel = () => {
+export const MenuPanel = ({ onToggle }: MenuPanelProps) => {
   return (
     <motion.div
       variants={panelVariants}
@@ -62,7 +66,7 @@ export const MenuPanel = () => {
     >
       <ul className="w-full py-5 px-5 flex flex-col gap-7 text-lg font-semibold">
         {links.map((link) => (
-          <li key={link.label} className="">
+          <li key={link.label} className="" onClick={onToggle}>
             <Link to={link.path} className="flex items-center gap-2">
               <span>{link.icon}</span>
               <span>{link.label}</span>

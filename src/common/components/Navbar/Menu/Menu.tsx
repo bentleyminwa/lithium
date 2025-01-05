@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
 import { MenuPanel } from "./MenuPanel";
@@ -14,7 +15,9 @@ const Menu = () => {
       <div className="text-white">
         <Hamburger size={28} toggled={isOpen} toggle={toggleMenu} />
       </div>
-      {isOpen && <MenuPanel />}
+      <AnimatePresence mode="wait">
+        {isOpen && <MenuPanel onToggle={toggleMenu} />}
+      </AnimatePresence>
     </div>
   );
 };
