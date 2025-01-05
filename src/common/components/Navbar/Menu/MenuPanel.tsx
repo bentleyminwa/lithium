@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { BsJournalBookmark } from "react-icons/bs";
 import { FaWpexplorer } from "react-icons/fa6";
 import { HiOutlineHome, HiOutlineInformationCircle } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -42,11 +41,6 @@ const links = [
     path: "/search",
     label: "Explore",
     icon: <FaWpexplorer className=" text-2xl text-gray-400" />,
-  },
-  {
-    path: "/journal",
-    label: "Journal",
-    icon: <BsJournalBookmark className=" text-2xl text-gray-400" />,
   },
 ];
 

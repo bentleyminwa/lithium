@@ -28,7 +28,6 @@ const links = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
   { path: "/search", label: "Explore" },
-  { path: "/journal", label: "Journal" },
 ];
 
 const NavLinks = () => {
