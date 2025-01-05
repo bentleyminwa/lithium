@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className="bg-[#121212] min-h-screen font-nunito text-[#eaeaea]">
       <Navbar />
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<SearchPage />} />

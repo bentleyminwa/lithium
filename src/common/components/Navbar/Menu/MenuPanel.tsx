@@ -62,6 +62,7 @@ export const MenuPanel = ({ onToggle }: MenuPanelProps) => {
       variants={panelVariants}
       initial="closed"
       animate="open"
+      exit="closed"
       className="absolute top-full right-0 text-white bg-[#121212] p-4 rounded shadow-lg w-full"
     >
       <ul className="w-full py-5 px-5 flex flex-col gap-7 text-lg font-semibold">
