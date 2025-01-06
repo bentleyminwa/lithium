@@ -52,6 +52,20 @@ const PageVariants = {
   },
 };
 
+const heroVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1.5,
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const About = () => {
   return (
     <motion.div
@@ -61,18 +75,17 @@ const About = () => {
       exit="exit"
       className="pt-32"
     >
-      <div className="bg-about-pattern bg-cover bg-center bg-no-repeat h-[50vh] text-center pt-16">
+      <motion.div
+        variants={heroVariants}
+        className="bg-about-pattern bg-cover bg-center bg-no-repeat h-[50vh] text-center pt-16"
+      >
         <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
           Discover. Inspire. Create.
         </h1>
         <p className="w-2/3 mx-auto mt-4 text-base md:text-lg xl:text-xl text-wrap">
-          Welcome to Lithium, where creativity meets community. Our vision is to
-          empower creators worldwide by providing a vibrant collection of
-          high-quality, royalty-free photos. Whether you're a designer, blogger,
-          or content creator, we aim to fuel your projects with imagery that
-          tells your story.
+          Welcome to Lithium, where creativity meets community.
         </p>
-      </div>
+      </motion.div>
       <div>
         {aboutData.map((item, index) => (
           <div key={index} className="w-10/12 md:w-4/12 lg:w-1/2 mx-auto py-12">
