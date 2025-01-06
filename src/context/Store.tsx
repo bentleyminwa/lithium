@@ -9,21 +9,23 @@ function Provider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [term, setTerm] = useState("");
 
+  const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;
+
   const fetchImages = useCallback(
     async (page: number, perPage: number) => {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `https://pixabay.com/api/?key=${process.env.REACT_APP_API_KEY}&q=${term}&page=${page}&per_page=${perPage}`
+          `https://pixabay.com/api/?key=${apiKey}&q=${term}&page=${page}&per_page=${perPage}`
         );
         const data = await response.json();
         setImages(data.hits);
         setIsLoading(false);
       } catch (error) {
-        console.log(error);
+        console.log("error fetching images", error);
       }
     },
-    [term]
+    [term, apiKey]
   );
 
   const fetchVideos = useCallback(
@@ -31,16 +33,16 @@ function Provider({ children }: { children: React.ReactNode }) {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `https://pixabay.com/api/videos/?key=${process.env.REACT_APP_API_KEY}&q=${term}&page=${page}&per_page=${perPage}`
+          `https://pixabay.com/api/videos/?key=${apiKey}&q=${term}&page=${page}&per_page=${perPage}`
         );
         const data = await response.json();
         setVideos(data.hits);
         setIsLoading(false);
       } catch (error) {
-        console.log(error);
+        console.log("error fetching videos", error);
       }
     },
-    [term]
+    [term, apiKey]
   );
 
   const searchText = useCallback((text: string) => {
