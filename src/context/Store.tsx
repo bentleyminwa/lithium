@@ -14,7 +14,7 @@ function Provider({ children }: { children: React.ReactNode }) {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `https://pixabay.com/api/?key=46848446-4201e1b80936076e4d594ef26&q=${term}&page=${page}&per_page=${perPage}`
+          `https://pixabay.com/api/?key=${process.env.REACT_APP_API_KEY}&q=${term}&page=${page}&per_page=${perPage}`
         );
         const data = await response.json();
         setImages(data.hits);
@@ -31,7 +31,7 @@ function Provider({ children }: { children: React.ReactNode }) {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `https://pixabay.com/api/videos/?key=46848446-4201e1b80936076e4d594ef26&q=${term}&page=${page}&per_page=${perPage}`
+          `https://pixabay.com/api/videos/?key=${process.env.REACT_APP_API_KEY}&q=${term}&page=${page}&per_page=${perPage}`
         );
         const data = await response.json();
         setVideos(data.hits);
