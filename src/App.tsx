@@ -1,5 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
+import Footer from "./common/components/Footer/Footer";
 import Navbar from "./common/components/Navbar/Navbar";
 import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
         </Routes>
       </AnimatePresence>
+      <Footer />
     </div>
   );
 };
